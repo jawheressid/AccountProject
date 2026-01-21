@@ -1,0 +1,44 @@
+<div style="padding: 20px;">
+  <h2 style="color: #2c3e50; margin-bottom: 25px; border-bottom: 2px solid #3498db; padding-bottom: 10px;">Account Details</h2>
+  
+  <div *ngIf="!isLoading && account" style="background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    <div style="margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #ecf0f1;">
+      <label style="display: block; margin-bottom: 5px; color: #7f8c8d; font-size: 12px; font-weight: bold; text-transform: uppercase;">First Name</label>
+      <p style="margin: 0; color: #2c3e50; font-size: 16px;">{{ account.firstName }}</p>
+    </div>
+
+    <div style="margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #ecf0f1;">
+      <label style="display: block; margin-bottom: 5px; color: #7f8c8d; font-size: 12px; font-weight: bold; text-transform: uppercase;">Last Name</label>
+      <p style="margin: 0; color: #2c3e50; font-size: 16px;">{{ account.lastName }}</p>
+    </div>
+
+    <div style="margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #ecf0f1;">
+      <label style="display: block; margin-bottom: 5px; color: #7f8c8d; font-size: 12px; font-weight: bold; text-transform: uppercase;">CIN</label>
+      <p style="margin: 0; color: #2c3e50; font-size: 16px;">{{ account.cin }}</p>
+    </div>
+
+    <div style="margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #ecf0f1;">
+      <label style="display: block; margin-bottom: 5px; color: #7f8c8d; font-size: 12px; font-weight: bold; text-transform: uppercase;">Account Number</label>
+      <p style="margin: 0; color: #2c3e50; font-size: 16px;">{{ account.accountNumber }}</p>
+    </div>
+
+    <div style="margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #ecf0f1;">
+      <label style="display: block; margin-bottom: 5px; color: #7f8c8d; font-size: 12px; font-weight: bold; text-transform: uppercase;">Agency</label>
+      <p style="margin: 0; color: #2c3e50; font-size: 16px;">{{ account.agency }}</p>
+    </div>
+
+    <div style="margin-bottom: 25px;">
+      <label style="display: block; margin-bottom: 5px; color: #7f8c8d; font-size: 12px; font-weight: bold; text-transform: uppercase;">Amount</label>
+      <p style="margin: 0; color: #2c3e50; font-size: 16px;">{{ account.amount | currency }}</p>
+    </div>
+
+    <div style="display: flex; gap: 10px; margin-top: 25px;">
+      <button (click)="update()" style="flex: 1; padding: 12px; background-color: #f39c12; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 14px; font-weight: bold; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#d68910'" onmouseout="this.style.backgroundColor='#f39c12'">Edit</button>
+      <button (click)="back()" style="flex: 1; padding: 12px; background-color: #95a5a6; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 14px; font-weight: bold; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#7f8c8d'" onmouseout="this.style.backgroundColor='#95a5a6'">Close</button>
+    </div>
+  </div>
+
+  <div *ngIf="isLoading" style="background-color: #ecf0f1; padding: 20px; border-radius: 4px; text-align: center; color: #7f8c8d;">
+    <p style="margin: 0; font-style: italic;">Loading account details...</p>
+  </div>
+</div>
